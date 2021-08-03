@@ -34,8 +34,10 @@ WebForMySelf
 	
 Object-oriented programming is an approach by which we think and operate in an application with concrete entities, in particular objects, and not with some abstract concepts.
 In other words, it is not only a way of writing code and using certain tools, it is also a way of thinking and a completely different approach to organizing the logic of a future project.
+
 This implies the description of various classes and work with their objects. But how can you determine that the written class is correct in terms of organizing the application code?
 Therefore, in the next five lessons, the so-called SOLID principles will be considered, following which you can create a really good architecture for a future application.
+
 The current video will focus on the first principle - the principle of sole responsibility, which provides for only one specific task, one specific class.
 Or, to rephrase somewhat, a class should have only one reason to change.
 The lesson will show how the current principle affects the architecture of the future application and what advantages it gives.	
@@ -111,13 +113,19 @@ Source codes for the lesson here:
 	
 The first two principles discussed earlier are, by and large, fairly simple, logical, and very easy to understand.
 But the principle of substitution of Barbara Liskov, especially its original formulation, drives many into a dead end.
+
 Therefore, in the current lesson, using two examples, I will try to explain in simple language the essence of the principle and what its violation leads to.
 The main formulation of the principle under consideration was presented at a conference in 1987 by Barbara Liskov and sounds as follows:
-"Let q (x) be applicable to objects x of type T. Then q (y) should be applicable to objects y of type S, where S is a subtype of T."
+
+_"Let q (x) be applicable to objects x of type T. Then q (y) should be applicable to objects y of type S, where S is a subtype of T."_
+
 Of course, for a beginner programmer, a very complex and incomprehensible formulation, so a little later in the book by Robert S. Martin, a more understandable and simplified definition was given:
-"Functions that use a base type should be able to use subtypes of the base type without knowing it."
+
+_"Functions that use a base type should be able to use subtypes of the base type without knowing it."_
+
 Which means the following - objects in the project can be replaced by objects that inherit them without any changes in the client code of the application.
 This means that inherited classes can override the methods of the parent class, but only so as not to change the existing functionality in the client code.
+
 Here you can talk a lot and give different interpretations of the principle, but it is better to consider all this with examples.
 Accordingly, the video version of the lesson shows two examples explaining the essence of the Liskov principle.
 The first example is a classic one, a class for calculating the area of ​​a rectangle and the second is an implementation of a template engine for a website.
@@ -158,8 +166,10 @@ Source codes for the lesson here:
 
 Interfaces are a great mechanism for defining client implementation, but their thoughtless and ubiquitous creation has more negative consequences than expected positives.
 This lesson will look at the fourth principle of SOLID - the principle of interface separation, which is designed to solve the above problem.
+
 As a rule, having studied the theory of interfaces, beginners immediately begin to implement them in their projects, defining a lot of methods that need to be implemented.
 This often results in classes overriding methods that are not used. Accordingly, the fourth principle is aimed precisely at solving this problem.
+
 The principle of interface decoupling states that client code should not depend on methods that are not used. So we can conclude that several specialized interfaces are always better than one universal one.
 In the video, using an example of an online store order processing class, it is shown how to apply the above principle.
 
